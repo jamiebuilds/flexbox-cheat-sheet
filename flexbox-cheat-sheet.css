@@ -1,0 +1,483 @@
+/*
+ * FLEXBOX CHEAT SHEET
+ *
+ * W3C: Editor's Draft CSS Flexible Box Layout Module
+ *   http://dev.w3.org/csswg/css-flexbox/
+ *
+ * W3C: 2012 CSS Flexible Box Layout Module
+ *
+ *
+ * W3C: 2011 CSS Flexible Box Layout Module
+ *   http://www.w3.org/TR/2011/WD-css3-flexbox-20111129/
+ *
+ * W3C: 2009 CSS Flexible Box Layout Module
+ *   http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/
+ *
+ * BOURBON: MASTER
+ *   https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/css3/_flex-box.scss
+ *
+ * BOURBON: NEW FLEX BOX
+ *   https://github.com/thoughtbot/bourbon/blob/new-flex-box/app/assets/stylesheets/css3/_flex-box.scss
+ *
+ * COMPASS
+ *   http://compass-style.org/reference/compass/css3/box/
+ *   https://github.com/chriseppstein/compass/blob/stable/frameworks/compass/stylesheets/compass/css3/_box.scss
+ *
+ * RESOURCES
+ *   CSS Flexbox 2009/2011 Spec Syntax Property Mapping
+ *     http://wiki.csswg.org/spec/flexbox-2009-2011-spec-property-mapping
+ *
+ *   A Guide to Flexbox (CSS Tricks)
+ *     http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+ *
+ *   “Old” Flexbox and “New” Flexbox (CSS Tricks)
+ *     http://css-tricks.com/old-flexbox-and-new-flexbox/
+ *
+ *   Quick hits with the Flexible Box Model (HTML5 Rocks)
+ *     http://www.html5rocks.com/en/tutorials/flexbox/quick/
+ *
+ *   Flexible box ("Flexbox") layout (MSDN)
+ *     http://msdn.microsoft.com/en-us/library/ie/hh673531(v=vs.85).aspx
+ *
+ * SPECIAL THANKS
+ *   Chris Coyier - @chriscoyier
+ *   Paul Irish   - @paul_irish
+ */
+
+.spec-2009 {
+  display:                   box;
+  display:            inline-box;
+  box-align:             stretch; /* start | end | center | baseline | stretch */
+  box-direction:          normal; /* normal | reverse | inherit */
+  box-flex:                  0.0; /* <number> */
+  box-flex-group:              1; /* <integer> */
+  box-lines:              single; /* single | multiple */
+  box-ordinal-group:           1; /* <integer> */
+  box-orient:        inline-axis; /* horizontal | vertical | inline-axis | block-axis | inherit */
+  box-pack:                start; /* start | end | center | justify */
+}
+
+.spec-2011 {
+  display:               flexbox;
+  display:        inline-flexbox;
+  flex-align:            stretch; /* start | end | center | baseline | stretch */
+  flex-flow:                 row; /* [ row | row-reverse | column | column-reverse ] [ wrap | wrap-reverse ]? */
+  flex-line-pack:          start; /* start | end | center | justify */
+  flex-order:                  0; /* <number> */
+  flex-pack:               start; /* start | end | center | justify */
+
+  /* Flex Function
+   *   flex( [ <pos-flex> <neg-flex>? ]? || <preferred-size>? )
+   */
+}
+
+.spec-2012 {
+  display:               flex;
+  display:        inline-flex;
+  align-content:      stretch; /* flex-start | flex-end | center | space-between | space-around | stretch */
+  align-items:        stretch; /* flex-start | flex-end | center | baseline | stretch */
+  align-self:            auto; /* auto | flex-start | flex-end | center | baseline | stretch */
+  flex:              0 1 auto; /* none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ] */
+  flex-basis:            auto; /* <'width'> */
+  flex-direction:         row; /* row | row-reverse | column | column-reverse */
+  flex-flow:       row nowrap; /* <'flex-direction'> || <'flex-wrap'> */
+  flex-grow:                0; /* <number> */
+  flex-shrink:              0; /* <number> */
+  flex-wrap:           nowrap; /* nowrap | wrap | wrap-reverse */
+  justify-content: flex-start; /* flex-start | flex-end | center | space-between | space-around */
+  order:                    0; /* <integer> */
+}
+
+/* DISPLAY BOX - Deprecated (See: DISPLAY FLEX)
+ *
+ * Bourbon:
+ *   @include display-box;
+ * Compass:
+ *   @include display-box;
+ */
+
+.display--box {
+  display:  -webkit-box;
+  display:     -moz-box;
+  display:          box;
+}
+
+/* DISPLAY FLEXBOX - Deprecated (See: DISPLAY FLEX)
+ *
+ */
+
+.display--flexbox {
+  display: -ms-flexbox;
+}
+
+/* DISPLAY FLEX
+ *
+ * Bourbon NEW:
+ *   @include display($value); // set $value to flex
+ */
+
+.display--flex {
+  display: -webkit-flex;
+  display:    -moz-flex;
+  display:         flex;
+}
+
+/* DISPLAY INLINE FLEX
+ *
+ * Bourbon NEW:
+ *   @include display($value); // set $value to inline-flex
+ */
+
+.display--inline-flex {
+  display: -webkit-inline-flex;
+  display:    -moz-inline-flex;
+  display:         inline-flex;
+}
+
+/* BOX FLEX - Deprecated (See: FLEX)
+ *   number
+ * Bourbon:
+ *   @include box-flex($value: 0.0);
+ * Compass:
+ *   $default-box-flex: 0;
+ *   @include box-flex($flex: $default-box-flex);
+ */
+
+.box-flex {
+  -webkit-box-flex: 0;
+     -moz-box-flex: 0;
+          box-flex: 0;
+}
+
+/* FLEX
+ *   number
+ * Bourbon NEW:
+ *   @include flex($value);
+ */
+
+.flex {
+  -webkit-flex: 0;
+     -moz-flex: 0;
+          flex: 0;
+}
+
+/* BOX ORDINAL GROUP - Deprecated (See: ORDER)
+ *   integer
+ * Bourbon:
+ *   @include ordinal-group($int: 1);
+ * Compass:
+ *   $default-box-ordinal-group: 1;
+ *   @include box-orient($direction: $default-box-ordinal-group);
+ */
+
+.box-ordinal-group {
+  -webkit-box-ordinal-group: 1;
+     -moz-box-ordinal-group: 1;
+          box-ordinal-group: 1;
+}
+
+/* ORDER
+ *   integer
+ * Bourbon NEW:
+ *   @include order($int: 0);
+ */
+
+.order {
+  -webkit-order: 1;
+     -moz-order: 1;
+          order: 1;
+}
+
+/* BOX ORIENT
+ *   horizontal|vertical|inline-axis|block-axis|inherit
+ * Bourbon:
+ *   @include box-orient($orient: inline-axis);
+ * Compass:
+ *   $default-box-orient: horizontal;
+ *   @include box-orient($direction: $default-box-orient);
+ */
+
+.box-orient--horizontal {
+  -webkit-box-orient: horizontal;
+     -moz-box-orient: horizontal;
+          box-orient: horizontal;
+}
+
+.box-orient--vertical {
+  -webkit-box-orient: vertical;
+     -moz-box-orient: vertical;
+          box-orient: vertical;
+}
+
+.box-orient--inline-axis {
+  -webkit-box-orient: inline-axis;
+     -moz-box-orient: inline-axis;
+          box-orient: inline-axis;
+}
+
+.box-orient--block-axis {
+  -webkit-box-orient: block-axis;
+     -moz-box-orient: block-axis;
+          box-orient: block-axis;
+}
+
+.box-orient--inherit {
+  -webkit-box-orient: inherit;
+     -moz-box-orient: inherit;
+          box-orient: inherit;
+}
+
+/* BOX PACK
+ *   start|end|center|justify
+ * Bourbon:
+ *   @include box-pack($pack: start);
+ * Compass:
+ *   $default-box-pack: start;
+ *   @include box-direction($direction: $default-box-pack);
+ */
+
+.box-pack--start {
+  -webkit-box-pack: start;
+     -moz-box-pack: start;
+          box-pack: start;
+}
+
+.box-pack--end {
+  -webkit-box-pack: end;
+     -moz-box-pack: end;
+          box-pack: end;
+}
+
+.box-pack--center {
+  -webkit-box-pack: center;
+     -moz-box-pack: center;
+          box-pack: center;
+}
+
+.box-pack--justify {
+  -webkit-box-pack: justify;
+     -moz-box-pack: justify;
+          box-pack: justify;
+}
+
+/* BOX ALIGN - Deprecated (See: ALIGN SELF)
+ *   start|end|center|baseline|stretch
+ * Bourbon:
+ *   @include box-align($align: stretch);
+ * Compass:
+ *   $default-box-align: stretch;
+ *   @include box-align($alignment: $default-box-align);
+ */
+
+.box-align--start {
+  -webkit-box-align: start;
+     -moz-box-align: start;
+          box-align: start;
+}
+
+.box-align--end {
+  -webkit-box-align: end;
+     -moz-box-align: end;
+          box-align: end;
+}
+
+.box-align--center {
+  -webkit-box-align: center;
+     -moz-box-align: center;
+          box-align: center;
+}
+
+.box-align--baseline {
+  -webkit-box-align: baseline;
+     -moz-box-align: baseline;
+          box-align: baseline;
+}
+
+.box-align--stretch {
+  -webkit-box-align: stretch;
+     -moz-box-align: stretch;
+          box-align: stretch;
+}
+
+/* ALIGN SELF
+ *   auto|start|end|center|baseline|stretch
+ * Bourbon NEW:
+ *   @include align-self($value: auto);
+ */
+
+.align-self--auto {
+  -webkit-align-self: auto;
+     -moz-align-self: auto;
+          align-self: auto;
+}
+
+.align-self--start {
+  -webkit-align-self: start;
+     -moz-align-self: start;
+          align-self: start;
+}
+
+.align-self--end {
+  -webkit-align-self: end;
+     -moz-align-self: end;
+          align-self: end;
+}
+
+.align-self--center {
+  -webkit-align-self: center;
+     -moz-align-self: center;
+          align-self: center;
+}
+
+.align-self--baseline {
+  -webkit-align-self: baseline;
+     -moz-align-self: baseline;
+          align-self: baseline;
+}
+
+.align-self--stretch {
+  -webkit-align-self: stretch;
+     -moz-align-self: stretch;
+          align-self: stretch;
+}
+
+/* BOX DIRECTION - Deprecated (See: FLEX DIRECTION)
+ *   normal|reverse|inherit
+ * Bourbon:
+ *   @include box-direction($direction: normal);
+ * Compass:
+ *   $default-box-direction: normal;
+ *   @include box-direction($direction: $default-box-direction);
+ */
+
+.box-direction--normal {
+  -webkit-box-direction: normal;
+     -moz-box-direction: normal;
+          box-direction: normal;
+}
+
+.box-direction--reverse {
+  -webkit-box-direction: reverse;
+     -moz-box-direction: reverse;
+          box-direction: reverse;
+}
+
+.box-direction--inherit {
+  -webkit-box-direction: inherit;
+     -moz-box-direction: inherit;
+          box-direction: inherit;
+}
+
+/* FLEX DIRECTION
+ *   row|row-reverse|column|column-reverse
+ * Bourbon NEW:
+ *   @include flex-direction($value: row);
+ */
+
+.flex-direction--row {
+  -webkit-flex-direction: row;
+     -moz-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-direction--row-reverse {
+  -webkit-flex-direction: row-reverse;
+     -moz-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.flex-direction--column {
+  -webkit-flex-direction: column;
+     -moz-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-direction--column-reverse {
+  -webkit-flex-direction: column-reverse;
+     -moz-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+/* ALIGN CONTENT
+ *   flex-start|flex-end|center|space-between|space-around|stretch
+ * Bourbon NEW:
+ *   @include align-content($value: stretch);
+ */
+
+.align-content--flex-start {
+  -webkit-align-content: flex-start;
+     -moz-align-content: flex-start;
+          align-content: flex-start;
+}
+
+.align-content--flex-end {
+  -webkit-align-content: flex-end;
+     -moz-align-content: flex-end;
+          align-content: flex-end;
+}
+
+.align-content--center {
+  -webkit-align-content: center;
+     -moz-align-content: center;
+          align-content: center;
+}
+
+.align-content--space-between {
+  -webkit-align-content: space-between;
+     -moz-align-content: space-between;
+          align-content: space-between;
+}
+
+.align-content--space-around {
+  -webkit-align-content: space-around;
+     -moz-align-content: space-around;
+          align-content: space-around;
+}
+
+.align-content--stretch {
+  -webkit-align-content: stretch;
+     -moz-align-content: stretch;
+          align-content: stretch;
+}
+
+/* JUSTIFY CONTENT
+ *   flex-start|flex-end|center|space-between|space-around|stretch
+ * Bourbon NEW:
+ *   @include justify-content($value: stretch);
+ */
+
+.justify-content--flex-start {
+  -webkit-justify-content: flex-start;
+     -moz-justify-content: flex-start;
+          justify-content: flex-start;
+}
+
+.justify-content--flex-end {
+  -webkit-justify-content: flex-end;
+     -moz-justify-content: flex-end;
+          justify-content: flex-end;
+}
+
+.justify-content--center {
+  -webkit-justify-content: center;
+     -moz-justify-content: center;
+          justify-content: center;
+}
+
+.justify-content--space-between {
+  -webkit-justify-content: space-between;
+     -moz-justify-content: space-between;
+          justify-content: space-between;
+}
+
+.justify-content--space-around {
+  -webkit-justify-content: space-around;
+     -moz-justify-content: space-around;
+          justify-content: space-around;
+}
+
+.justify-content--stretch {
+  -webkit-justify-content: stretch;
+     -moz-justify-content: stretch;
+          justify-content: stretch;
+}
