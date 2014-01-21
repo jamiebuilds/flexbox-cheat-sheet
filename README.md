@@ -12,7 +12,7 @@ Quick references for everything you need to know about using flexbox
 ### Resources
 
 - [W3C: Editor's Draft CSS Flexible Box Layout Module](http://dev.w3.org/csswg/css-flexbox/)
-- W3C: 2012 CSS Flexible Box Layout Module
+- [W3C: 2012 CSS Flexible Box Layout Module](http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/)
 - [W3C: 2011 CSS Flexible Box Layout Module](http://www.w3.org/TR/2011/WD-css3-flexbox-20111129/)
 - [W3C: 2009 CSS Flexible Box Layout Module](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/)
 - [Bourbon Source](https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/css3/_flex-box.scss)
