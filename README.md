@@ -30,6 +30,9 @@ Quick references for everything you need to know about using flexbox
 ---
 
 ### 2009 Spec
+Deprecated (See: [2012 Spec](#2012-spec))
+
+[W3C Reference](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/) 
 
 ```css
 display:                   box;
@@ -45,6 +48,9 @@ box-pack:                start; /* start | end | center | justify */
 ```
 
 ### 2011 Spec
+Deprecated (See: [2012 Spec](#2012-spec))
+
+[W3C Reference](http://www.w3.org/TR/2011/WD-css3-flexbox-20111129/) 
 
 ```css
 display:               flexbox;
@@ -61,6 +67,8 @@ flex-pack:               start; /* start | end | center | justify */
 ```
 
 ### 2012 Spec
+
+[W3C Reference](http://dev.w3.org/csswg/css-flexbox/) 
 
 ```css
 display:               flex;
@@ -82,7 +90,9 @@ order:                    0; /* <integer> */
 ---
 
 ### Display Box
-#### Deprecated (See: [Display Flex](#display-flex))
+Deprecated (See: [Display Flex](#display-flex))
+
+[W3C Reference](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#overview) 
 
 ```css
 display:  -webkit-box;
@@ -96,14 +106,36 @@ display:          box;
 @include display-box;
 ```
 
+### Display Inline Box
+Deprecated (See: [Display Inline Flex](#display-inline-flex))
+
+[W3C Reference](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#overview) 
+
+```css
+display: inline-box;
+```
+
 ### Display Flexbox
 Deprecated (See: [Display Flex](#display-flex))
+
+[W3C Reference](http://www.w3.org/TR/2011/WD-css3-flexbox-20111129/#display-flexbox) 
 
 ```css
 display: -ms-flexbox;
 ```
 
+### Display Flexbox
+Deprecated (See: [Display Inline Flex](#display-inline-flex))
+
+[W3C Reference](http://www.w3.org/TR/2011/WD-css3-flexbox-20111129/#display-flexbox) 
+
+```css
+display: -ms-inline-flexbox;
+```
+
 ### Display Flex
+
+[W3C Reference](http://dev.w3.org/csswg/css-flexbox/#flex-containers) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
 
 ```css
 display: -webkit-flex;
@@ -121,6 +153,8 @@ display flex
 ```
 
 ### Display Inline Flex
+
+[W3C Reference](http://dev.w3.org/csswg/css-flexbox/#flex-containers) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
 
 ```css
 display: -webkit-inline-flex;
@@ -140,6 +174,8 @@ display inline-flex
 ### Box Flex
 Deprecated (See: [Flex](#flex))
 
+[W3C Reference](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-flex) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/box-flex)
+
 ```css
 -webkit-box-flex: <number>;
    -moz-box-flex: <number>;
@@ -154,6 +190,8 @@ $default-box-flex: 0;
 ```
 
 ### Flex
+
+[W3C Reference](http://dev.w3.org/csswg/css-flexbox/#propdef-flex) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
 
 ```css
 -webkit-flex: [ none | [ <flex-grow> <flex-shrink>? || <flex-basis> ] ];
@@ -173,6 +211,8 @@ flex [ none | [ <flex-grow> <flex-shrink>? || <flex-basis> ] ]
 ### Box Ordinal Group
 Deprecated (See: [Order](#order))
 
+[W3C Reference](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-ordinal-group) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/box-ordinal-group)
+
 ```css
 -webkit-box-ordinal-group: <integer>;
    -moz-box-ordinal-group: <integer>;
@@ -187,6 +227,8 @@ $default-box-ordinal-group: 1;
 ```
 
 ### Order
+
+[W3C Reference](http://dev.w3.org/csswg/css-flexbox/#propdef-order) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/order)
 
 ```css
 -webkit-order: <integer>;
@@ -205,6 +247,8 @@ order <integer>
 
 ### Box Orient
 
+[W3C Reference](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-orient) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/box-orient)
+
 ```css
 -webkit-box-orient: [ horizontal | vertical | inline-axis | block-axis | inherit ];
    -moz-box-orient: [ horizontal | vertical | inline-axis | block-axis | inherit ];
@@ -219,6 +263,8 @@ $default-box-orient: horizontal;
 ```
 
 ### Box Pack
+
+[W3C Reference](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-pack) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/box-pack)
 
 ```css
 -webkit-box-pack: [ start | end | center | justify ];
@@ -236,6 +282,8 @@ $default-box-pack: start;
 ### Box Align
 Deprecated (See: [Align Self](#align-self))
 
+[W3C Reference](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-align) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/box-align)
+
 ```css
 -webkit-box-align: [start | end | center | baseline | stretch];
    -moz-box-align: [start | end | center | baseline | stretch];
@@ -250,6 +298,8 @@ $default-box-align: stretch;
 ```
 
 ### Align Self
+
+[W3C Reference](http://dev.w3.org/csswg/css-flexbox/#align-items-property) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)
 
 ```css
 -webkit-align-self: [ auto | flex-start | flex-end | center | baseline | stretch ];
@@ -269,6 +319,8 @@ align-self [ auto | flex-start | flex-end | center | baseline | stretch ]
 ### Box Direction
 Deprecated (See: [Flex Direction](#flex-direction))
 
+[W3C Reference](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/#propdef-box-direction) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/box-direction)
+
 ```css
 -webkit-box-direction: [ normal | reverse | inherit ];
    -moz-box-direction: [ normal | reverse | inherit ];
@@ -283,6 +335,8 @@ $default-box-direction: normal;
 ```
 
 ### Flex Direction
+
+[W3C Reference](http://dev.w3.org/csswg/css-flexbox/#flex-direction-property) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction) · [CSS Tricks Almanac](http://css-tricks.com/almanac/properties/f/flex-direction/)
 
 ```css
 -webkit-flex-direction: [ row | row-reverse | column | column-reverse ];
@@ -301,6 +355,8 @@ flex-direction [ row | row-reverse | column | column-reverse ]
 
 ### Align Content
 
+[W3C Reference](http://dev.w3.org/csswg/css-flexbox/#align-content-property) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content) · [CSS Tricks Almanac](http://css-tricks.com/almanac/properties/a/align-content/)
+
 ```css
 -webkit-align-content: [ flex-start | flex-end | center | space-between | space-around | stretch ];
    -moz-align-content: [ flex-start | flex-end | center | space-between | space-around | stretch ];
@@ -317,6 +373,8 @@ align-content [ flex-start | flex-end | center | space-between | space-around | 
 ```
 
 ### Justify Content
+
+[W3C Reference](http://dev.w3.org/csswg/css-flexbox/#justify-content-property) · [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) · [CSS Tricks Almanac](http://css-tricks.com/almanac/properties/j/justify-content/)
 
 ```css
 -webkit-justify-content: [ flex-start | flex-end | center | space-between | space-around ];
