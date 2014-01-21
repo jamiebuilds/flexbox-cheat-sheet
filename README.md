@@ -3,6 +3,12 @@ Flexbox Cheat Sheet
 
 Quick references for everything you need to know about using flexbox
 
+---
+
+**YO! THIS DOCUMENT IS A WORK IN PROGRESS. PROCEED WITH CAUTION**
+
+---
+
 ### Resources
 
 - [W3C: Editor's Draft CSS Flexible Box Layout Module](http://dev.w3.org/csswg/css-flexbox/)
@@ -20,6 +26,8 @@ Quick references for everything you need to know about using flexbox
 - [“Old” Flexbox and “New” Flexbox (CSS Tricks)](http://css-tricks.com/old-flexbox-and-new-flexbox/)
 - [Quick hits with the Flexible Box Model (HTML5 Rocks)](http://www.html5rocks.com/en/tutorials/flexbox/quick/)
 - [Flexible box ("Flexbox") layout (MSDN)](http://msdn.microsoft.com/en-us/library/ie/hh673531.aspx)
+
+---
 
 ### 2009 Spec
 
@@ -70,6 +78,8 @@ flex-wrap:           nowrap; /* nowrap | wrap | wrap-reverse */
 justify-content: flex-start; /* flex-start | flex-end | center | space-between | space-around */
 order:                    0; /* <integer> */
 ```
+
+---
 
 ### Display Box
 #### Deprecated (See: [Display Flex](#display-flex))
